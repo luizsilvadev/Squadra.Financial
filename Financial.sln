@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{37026FB1-DF10-491F-8931-05EE0DD86E39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Financial.Models", "Models\Financial.Models.csproj", "{37026FB1-DF10-491F-8931-05EE0DD86E39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Financial.WebAPI", "WebAPI\Financial.WebAPI.csproj", "{F78272E2-682C-440E-9B73-F4D57989CBA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{37026FB1-DF10-491F-8931-05EE0DD86E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37026FB1-DF10-491F-8931-05EE0DD86E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37026FB1-DF10-491F-8931-05EE0DD86E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78272E2-682C-440E-9B73-F4D57989CBA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78272E2-682C-440E-9B73-F4D57989CBA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78272E2-682C-440E-9B73-F4D57989CBA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78272E2-682C-440E-9B73-F4D57989CBA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

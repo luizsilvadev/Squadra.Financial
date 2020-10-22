@@ -9,5 +9,4 @@ namespace Financial.Models
         decimal VisualizarSaldo();
         decimal GerarSaldo(decimal valor);
     }
-
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Financial\\Financial.Models\\Financial.Models.csproj": {}
+    "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Financial.Models.csproj": {}
   },
   "projects": {
-    "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Financial\\Financial.Models\\Financial.Models.csproj": {
+    "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Financial.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Financial\\Financial.Models\\Financial.Models.csproj",
+        "projectUniqueName": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Financial.Models.csproj",
         "projectName": "Financial.Models",
-        "projectPath": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Financial\\Financial.Models\\Financial.Models.csproj",
+        "projectPath": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Financial.Models.csproj",
         "packagesPath": "C:\\Users\\luizp\\.nuget\\packages\\",
-        "outputPath": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Financial\\Financial.Models\\obj\\",
+        "outputPath": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\luizp\\AppData\\Roaming\\NuGet\\NuGet.Config",

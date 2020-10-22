@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Models.csproj",
-      "projectName": "Models",
-      "projectPath": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Financial.Models.csproj",
+      "projectName": "Financial.Models",
+      "projectPath": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\Financial.Models.csproj",
       "packagesPath": "C:\\Users\\luizp\\.nuget\\packages\\",
       "outputPath": "C:\\desenvolvimento\\Lavras42020\\Squadra.Financial\\Models\\obj\\",
       "projectStyle": "PackageReference",

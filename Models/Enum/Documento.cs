@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Financial.Models.Enum
 {
-    public enum TipoConta
+    public enum Documento
     {
-        Corrente = 0,
-        Poupança = 1,
-        Salario = 2
+        CPF,
+        RG,
+        CNH
     }
 }
