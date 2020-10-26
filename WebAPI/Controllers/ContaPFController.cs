@@ -13,6 +13,11 @@ namespace Financial.WebAPI.Controllers
     [ApiController]
     public class ContaPFController : ControllerBase
     {
+
+        // simula uma tabela de banco de dados
+        public int ultimoId { get; set; }
+        public List<ContaPF> lista { get; set; }
+
         private static readonly string[] TipoConta = new[]
         {
             "Poupança", "Conta Corrente", "Conta Salário", "Depósito Judicial"
@@ -28,50 +33,43 @@ namespace Financial.WebAPI.Controllers
         public ContaPFController(ILogger<ContaPFController> logger)
         {
             _logger = logger;
+            GerarLista();
         }
 
-        // simula uma tabela de banco de dados
-        public int ultimoId { get; set; }
-        public List<ContaPF> lista { get; set; }
-
-        private List<ContaPF> GerarLista()
+        private void GerarLista()
         {
-            if (this.lista == null)
+            var rng = new Random();
+            lista = Enumerable.Range(1, 5).Select(index => new ContaPF
             {
-                var rng = new Random();
-                this.lista = Enumerable.Range(1, 5).Select(index => new ContaPF
-                {
-                    Agencia = rng.Next(1111, 9999),
-                    Conta = rng.Next(111111, 999999),
-                    TipoConta = TipoConta[rng.Next(TipoConta.Length)],
-                    NomeCompleto = Nome[rng.Next(Nome.Length)],
-                }).ToList();
+                Agencia = rng.Next(1111, 9999),
+                Conta = rng.Next(111111, 999999),
+                TipoConta = TipoConta[rng.Next(TipoConta.Length)],
+                NomeCompleto = Nome[rng.Next(Nome.Length)],
+            }).ToList();
 
-                this.lista.Add(new ContaPF
-                {
-                    Agencia = 1234,
-                    Conta = 123456,
-                    TipoConta = TipoConta[rng.Next(TipoConta.Length)],
-                    NomeCompleto = "Maria Antonieta da Silva"
-                });
+            lista.Add(new ContaPF
+            {
+                Agencia = 1234,
+                Conta = 123456,
+                TipoConta = TipoConta[rng.Next(TipoConta.Length)],
+                NomeCompleto = "Maria Antonieta da Silva"
+            });
 
-                this.lista.Add(new ContaPF
-                {
-                    Agencia = 1235,
-                    Conta = 123457,
-                    TipoConta = TipoConta[rng.Next(TipoConta.Length)],
-                    NomeCompleto = "José Maria de Souza e Albuquerque de Medeiros e Sá"
-                });
+            lista.Add(new ContaPF
+            {
+                Agencia = 1235,
+                Conta = 123457,
+                TipoConta = TipoConta[rng.Next(TipoConta.Length)],
+                NomeCompleto = "José Maria de Souza e Albuquerque de Medeiros e Sá"
+            });
 
-                var id = 1;
-                foreach (var item in lista)
-                {
-                    item.Id = id;
-                    id++;
-                }
-                ultimoId = id;
+            var id = 1;
+            foreach (var item in lista)
+            {
+                item.Id = id;
+                id++;
             }
-            return lista;
+            ultimoId = id;
         }
 
         /// <summary>
@@ -81,10 +79,9 @@ namespace Financial.WebAPI.Controllers
         [HttpGet]
         public IEnumerable<ContaPF> GetAll()
         {
-            return GerarLista();
+            return lista;
         }
 
-        // GET api/<ContaPFController>/5
         /// <summary>
         /// GetById - exibe um registro da lista
         /// </summary>
@@ -93,11 +90,9 @@ namespace Financial.WebAPI.Controllers
         [HttpGet("{id}")]
         public ContaPF GetById(int id)
         {
-            return GerarLista()
-                .FirstOrDefault(conta => conta.Id == id);
+            return lista.FirstOrDefault(conta => conta.Id == id);
         }
 
-        // POST api/<ContaPFController>
         /// <summary>
         /// Post - acrecenta um novo registro na lista
         /// </summary>
@@ -105,7 +100,7 @@ namespace Financial.WebAPI.Controllers
         [HttpPost]
         public void Post([FromBody] ContaPF contaPF)
         {
-            GerarLista().Add(new ContaPF
+            lista.Add(new ContaPF
             {
                 Id = ultimoId + 1,
                 Agencia = contaPF.Agencia,
@@ -116,7 +111,6 @@ namespace Financial.WebAPI.Controllers
 
         }
 
-        // PUT api/<ContaPFController>/5
         /// <summary>
         /// Put - altera um item da lista pelo id
         /// </summary>
@@ -136,7 +130,6 @@ namespace Financial.WebAPI.Controllers
             return conta;
         }
 
-        // DELETE api/<ContaPFController>/5
         /// <summary>
         /// Delete - deleta um item por id
         /// </summary>
@@ -147,8 +140,10 @@ namespace Financial.WebAPI.Controllers
         {
             try
             {
-                GerarLista().Remove(new ContaPF() { Id = id });
-                return true;
+                if (lista.Remove(GetById(id)))
+                    return true;
+                else
+                    throw new Exception();
             }
             catch
             {
